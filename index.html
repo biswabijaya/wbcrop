@@ -1,7 +1,15 @@
-# Wbcrop | Image Cropper
-Load the following supporting libraries on page.
+<!DOCTYPE html>
 
-```
+<html lang="en">
+
+<head>
+    <title>Wbcrop | Image Cropper</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Biswa Bijaya Samal">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
     <!-- wbcrop CSS bundle -->
     <link rel="stylesheet" href="assets/css/ripple.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
@@ -13,20 +21,51 @@ Load the following supporting libraries on page.
     <script src="assets/js/jquery.ui.touch-punch.min.js" defer></script>
     <script src="assets/js/ripple.js" defer></script>
     <script src="assets/js/wbcrop.js" defer></script>
-```
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-## HTML
-Create file upload box with image preview container which will display final image preview.
-```
- <div>
+    <script defer>
+        $(document).ready(function(){
+            // custom JS (IGNORE)
+            $('body').css("min-height", windowHeight);
+            // Initialize wbcrop
+            wbcrop("#wbcrop-input");
+        });
+    </script>
+
+    <!-- Styles -->
+    <style>
+        * {
+            font-family: 'Patrick Hand', sans-serif;
+        }
+        header {
+            position: absolute;
+            top: 0;
+        }
+        header > * {
+            text-align: center;
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="align-self: flex-start;">wbcrop</h1>
+        <h4>made with &hearts;&hearts;&hearts; by ! <a class="github-button" href="https://github.com/biswabijaya" data-size="large" aria-label="Follow @biswabijaya on GitHub">@biswabijaya</a></h4>
+        <br>
+        <a class="github-button" href="https://github.com/biswabijaya/wbcrop" data-show-count="true" aria-label="Star on GitHub">Star</a> |
+
+    </header>
+    <div>
         <div id="" class="image-previewer" data-wbcrop=""></div>
         <input id="wbcrop-input" type="file" name="">
-</div>
-```
-
-Create a modal window in which you can resize/rotate/crop the image.
-```
-<!-- Modal content -->
+    </div>
+    <canvas id="wbcrop-hidden-canvas"></canvas>
+    <!-- The Modal -->
+    <div id="wbcrop-modal-cover" class="wbcrop-modal-cover">
+        <!-- Modal content -->
         <div id="wbcrop-modal" class="wbcrop-modal">
             <div id="wbcrop-close" class="wbcrop-close">&times;</div>
             <div id="wbcrop-modal-display-container" class="wbcrop-modal-display-container">
@@ -52,23 +91,10 @@ Create a modal window in which you can resize/rotate/crop the image.
                     <img class="wbcrop-svg" src="assets/icons/feather/check-square.svg">
                 </a>
             </div>
-</div>
-```
-
-Create canvas element to preview the cropped image in the modal.
-
-```
-<div class="wbcrop-cropping-canvas-container">
+        </div>
+        <div class="wbcrop-cropping-canvas-container">
             <canvas id="wbcrop-cropping-canvas"></canvas>
-</div>
-```
-
-## JS
-Finally Initialize the image cropper by calling the function on the file input.
-
-```javascript
-$(function() {   
-  wbcrop("#wbcrop-input");
-});
-```
-See live demo and download source code.
+        </div>
+    </div>
+</body>
+</html>
