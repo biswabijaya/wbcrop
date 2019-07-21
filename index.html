@@ -47,6 +47,43 @@
             text-align: center;
             font-weight: normal;
         }
+
+        #container {
+          min-width: 100%;
+          min-height: 100%;
+          text-align: center;
+          background: linear-gradient(230deg,#a24bcf,#4b79cf,#4bc5cf);
+          background-size: 300% 300%;
+          -webkit-animation: Purple-Blue-Orchid-grad 29s ease infinite;
+          -moz-animation: Purple-Blue-Orchid-grad 29s ease infinite;
+          -o-animation: Purple-Blue-Orchid-grad 29s ease infinite;
+          animation: Purple-Blue-Orchid-grad 29s ease infinite;
+        }
+        .Purple-Blue-Orchid-grad {
+          background: linear-gradient(43deg, #800080, #00807b, #806700);
+          background-size: 600% 600%;
+        }
+
+        @-webkit-keyframes Purple-Blue-Orchid-grad {
+            0%{background-position:0% 65%}
+            50%{background-position:100% 36%}
+            100%{background-position:0% 65%}
+        }
+        @-moz-keyframes Purple-Blue-Orchid-grad {
+            0%{background-position:0% 65%}
+            50%{background-position:100% 36%}
+            100%{background-position:0% 65%}
+        }
+        @-o-keyframes Purple-Blue-Orchid-grad {
+            0%{background-position:0% 65%}
+            50%{background-position:100% 36%}
+            100%{background-position:0% 65%}
+        }
+        @keyframes Purple-Blue-Orchid-grad {
+            0%{background-position:0% 65%}
+            50%{background-position:100% 36%}
+            100%{background-position:0% 65%}
+        }
     </style>
 
 </head>
@@ -63,7 +100,7 @@
         <a class="github-button" href="https://github.com/biswabijaya/wbcrop/issues" data-icon="octicon-issue-opened" data-size="large" aria-label="Issue biswabijaya/wbcrop on GitHub">Issue</a>&nbsp;
         <a class="github-button" href="https://github.com/biswabijaya/wbcrop/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download biswabijaya/wbcrop on GitHub">Download</a>
     </header>
-    <div>
+    <div id="container" class="Purple-Blue-Orchid-grad">
         <div id="" class="image-previewer" data-wbcrop=""></div>
         <br>
         <input class="form-control" id="wbcrop-input" type="file" name="">
