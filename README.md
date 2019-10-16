@@ -71,4 +71,4 @@ $(function() {
   wbcrop("#wbcrop-input");
 });
 ```
-See live demo and download source code.
+See live demo - https://github.com/biswabijaya/SQL-WoW/blob/master/queries/q1.sql
